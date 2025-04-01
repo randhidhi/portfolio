@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Randy Bou Jaber - Compétences</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Montserrat:wght@400;600;800&display=swap">
+    <link rel="stylesheet" href="skills.css">
+</head>
+<body>
+<header>
+    <a href="index.html">← Randy BOU JABER</a>
+</header>
+
+<div id="container">
+    <p class="intro-text">En BUT, chaque projet réalisé correspond à un bloc de compétences précis. Étant actuellement en deuxième année, je vous présente les six blocs sur lesquels nous avons travaillé :</p>
+
+    <div id="blocks">
+        <div class="section-helper">
+            <div id="block1" class="block">
+                <p>Réaliser</p>
+            </div>
+        </div>
+        <div class="section-helper">
+            <div id="block2" class="block">
+                <p>Optimiser</p>
+            </div>
+        </div>
+        <div class="section-helper">
+            <div id="block3" class="block">
+                <p>Administrer</p>
+            </div>
+        </div>
+        <div class="section-helper">
+            <div id="block4" class="block">
+                <p>Gérer</p>
+            </div>
+        </div>
+        <div class="section-helper">
+            <div id="block5" class="block">
+                <p>Conduire</p>
+            </div>
+        </div>
+        <div class="section-helper">
+            <div id="block6" class="block">
+                <p>Collaborer</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="academic-skill-container" class="academic-skill-details">
+        <!-- Contenu généré dynamiquement -->
+    </div>
+
+    <div class="skills-section">
+        <p class="intro-text">Ayant travaillé sur de nombreux projets tout au long de mon BUT, j'ai pu développer de nombreuses compétences techniques. En voici la liste :</p>
+        <h3 class="skills-title">Hard-skills</h3>
+        <div id="hard-skills">
+            <div class="skill" data-skill="HTML">
+                <img src="images/HTML.svg" alt="HTML5">
+                <p>HTML</p>
+            </div>
+            <div class="skill" data-skill="CSS">
+                <img src="images/CSS.svg" alt="CSS">
+                <p>CSS</p>
+            </div>
+            <div class="skill" data-skill="PHP">
+                <img src="images/php.png" alt="PHP">
+                <p>PHP</p>
+            </div>
+            <div class="skill" data-skill="JS">
+                <img src="images/JS.svg" alt="JavaScript">
+                <p>JavaScript</p>
+            </div>
+            <div class="skill" data-skill="C">
+                <img src="images/C.svg" alt="C">
+                <p>C</p>
+            </div>
+            <div class="skill" data-skill="Java">
+                <img src="images/java.svg" alt="Java">
+                <p>Java</p>
+            </div>
+            <div class="skill" data-skill="Python">
+                <img src="images/python.svg" alt="Python">
+                <p>Python</p>
+            </div>
+            <div class="skill" data-skill="MySQL">
+                <img src="images/MySQL.svg" alt="MySQL">
+                <p>MySQL</p>
+            </div>
+            <div class="skill" data-skill="PostGreSQL">
+                <img src="images/postgresql.svg" alt="PostgreSQL">
+                <p>PostgreSQL</p>
+            </div>
+            <div class="skill" data-skill="GitHub">
+                <img src="images/GitHub.svg" alt="GitHub">
+                <p>GitHub</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="popup" class="skill-details">
+        <p id="popup-description"></p>
+        <p id="popup-experience"></p>
+        <p id="popup-projects"></p>
+    </div>
+
+    <div class="skills-section">
+        <p class="intro-text">Mais j'ai également pu développer des compétences organisationnelles et communicationnelles, qui sont tout aussi importantes en entreprise :</p>
+        <h3 class="skills-title">Soft-skills</h3>
+        <div id="soft-skills">
+            <div class="skill">
+                <img src="images/royaume-uni.png" alt="Anglais">
+                <p>Anglais C1</p>
+            </div>
+            <div class="skill">
+                <img src="images/project-management.png" alt="Gestion de projet">
+                <p>Gestion de projet</p>
+            </div>
+            <div class="skill">
+                <img src="images/interface-web.png" alt="IHM">
+                <p>Conception IHM</p>
+            </div>
+            <div class="skill">
+                <img src="images/megaphone.png" alt="Communication">
+                <p>Communication</p>
+            </div>
+            <div class="skill">
+                <img src="images/espagne.png" alt="Espagnol">
+                <p>Espagnol B2</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Données des compétences
+    const skillData = {
+        "HTML": {
+            description: "Langage utilisé pour structurer les pages web.",
+            experience: "1 an et demi",
+            projects: ["Portfolio", "Projet UNESCO", "Projet Travia", "Harmoneyca"]
+        },
+        "CSS": {
+            description: "Langage de style pour le design des pages web.",
+            experience: "1 an et demi",
+            projects: ["Portfolio", "Projet UNESCO", "Projet Travia", "Harmoneyca"]
+        },
+        "PHP": {
+            description: "Langage utilisé pour apporter du dynamise aux pages web",
+            experience: "1 an",
+            projects: ["Portfolio", "Projet UNESCO", "Projet Travia", "Harmoneyca"]
+        },
+        "JS": {
+            description: "Langage de script extrêmement polyvalent et varié pour les pages web.",
+            experience: "1 an",
+            projects: ["Portfolio", "Projet UNESCO", "Projet Travia", "Harmoneyca"]
+        },
+        "C": {
+            description: "Langage de programmation bas niveau avec gestion de mémoire.",
+            experience: "1 an",
+            projects: ["Projet Travia"]
+        },
+        "Java": {
+            description: "Langage de programmation haut niveau.",
+            experience: "1 an",
+            projects: ["Projet Travia"]
+        },
+        "Python": {
+            description: "Langage de script haut niveau utile pour les scripts / calculs simples.",
+            experience: "1 an",
+            projects: ["Pas de projets."]
+        },
+        "MySQL": {
+            description: "Système de gestion de base de données.",
+            experience: "1 an et demi",
+            projects: ["Portfolio", "Projet Travia", "Harmoneyca"]
+        },
+        "PostGreSQL": {
+            description: "Système de gestion de base de données un peu plus avancé et varié que MySQL, même principe.",
+            experience: "1 an",
+            projects: ["Projet UNESCO"]
+        },
+        "GitHub": {
+            description: "Plateforme de partage de fichiers, très utile pour les projets collaboratifs.",
+            experience: "6 mois",
+            projects: ["Projet Travia", "Harmoneyca"]
+        },
+    };
+
+    const academicData = {
+        "block1": {
+            description: "Le bloc \"Réaliser\" fait appel aux trois compétences suivantes :" +
+                "<br><ul>" +
+                "<li><b>Élaborer une application informatique</b> : En équipe, nous avons pu élaborer une application" +
+                "informatique fonctionnelle, utilisant divers langages de programmation (voir SpeedyWiki)</li>" +
+                "<li><b>Faire évoluer une application informatique</b> : Étant un bon développeur Back-end / Back-office, " +
+                "j'ai pu faire évoluer l'ensemble de nos projets de cette année en apportant un aspect dynamique " +
+                "à une application initialement statique</li>" +
+                "<li><b>Maintenir en condition une application informatique</b> : Après livraison de chaque projet, " +
+                "il fallait que l'on maintienne l'application en condition afin de s'assurer que rien ne tourne mal.</li></ul>",
+            projects: ["<a href='projects.html#speedywiki'>SpeedyWiki</a>"]
+        },
+        "block2": {
+            description: "Le bloc \"Optimiser\" fait appel aux trois compétences suivantes :" +
+                "<br><ul>" +
+                "<li><b>Améliorer les performances dans des contextes contraints</b> : Grâce à nos cours de développement, " +
+                "notamment de Méthodes d'optmisation, j'ai pu intégrer de solides connaissances en matière de " +
+                "complexité et d'efficacité de mes programmes.</li>" +
+                "<li><b>Limiter l'impact environnemental d'une application informatique</b> : Notre professeur de développement " +
+                "web nous a sensibilisé vis à vis de l'impact environnemental important que peut avoir un usage informatique tout simple. " +
+                "Ceci m'a poussé à me concentrer sur la simplicité de mon programme, de manière à faciliter l'expérience utilisateur en minimisant " +
+                "son nombre de requêtes envoyées, donnant une application avec un impact environnemental moindre.</li>" +
+                "<li><b>Mettre en place des applications informatiques adaptées et efficaces</b> : Le projet Travia " +
+                "mentionné juste en dessous est un excellent exemple d'efficacité de programme. L'algorithme en C de " +
+                "recherche de plus court chemin (A* et Dijkstra) pour notre application devait être implémenté de manière à " +
+                "être le plus efficace possible, ce qui a été grandement réussi.</li></ul>",
+            projects: ["<a href='projects.html#travia'>Travia</a>"]
+        },
+        "block3": {
+            description: "Le bloc \"Administrer\" fait appel aux trois compétences suivantes :" +
+                "<br><ul>" +
+                "<li><b>Déployer une nouvelle architecture technique</b> : je cherche </li>" +
+                "<li><b>Améliorer une infratstructure existante</b> : je cherche </li> " +
+                "<li><b>Sécuriser les applications et services</b> : je cherche </li></ul>",
+            projects: ["<a href='projects.html#speedywiki'>oui</a>"]
+        },
+        "block4": {
+            description: "Le bloc \"Gérer\", se basant principalement sur la gestion de projet, fait appel aux trois compétences suivantes :" +
+                "<br><ul>" +
+                "<li><b>Lancer un nouveau projet</b> : </li>" +
+                "<li><b>Sécuriser des données</b> : Le projet UNESCO, datant de première année, nous faisait déjà appliquer" +
+                "les bases de la sécurité informatique vis-à-vis de la gestion de comptes administrateurs. Depuis, tous les autres projets " +
+                "réalisés ont des normes de sécurité accrues, notamment le projet Travia ou Harmoneyca.</li>" +
+                "<li><b>Exploiter des données pour la prise de décision</b> : Nos cours de communication nous ont " +
+                "transmis l'importance des données lorsque l'on mène un projet. À travers du Benchmarking, des sondages, et autres " +
+                "méthodes de récoltes de données, nous avons pu prendre les bonnes décisions vis à vis de notre projet (affichage, fonctionnalités...).</li></ul>",
+            projects: ["<a href='projects.html#unesco'>UNESCO</a>"]
+        },
+        "block5": {
+            description: "Le bloc \"Conduire\", se basant surtout sur l'aspect management / chef de projet, fait appel aux trois compétences suivantes :" +
+                "<br><ul>" +
+                "<li><b>Lancer un nouveau projet</b> : </li>" +
+                "<li><b>Piloter le maintien d'un projet en condition opérationnelle</b> : </li>" +
+                "<li><b>Faire évoluer un système d'information</b> : </li></ul>",
+            projects: ["<a href='projects.html#harmoneyca'>Harmoneyca</a>"]
+        },
+        "block6": {
+            description: "Le bloc \"Collaborer\", se concentrant explicitement sur le travail d'équipe, fait appel aux trois compétences suivantes :" +
+                "<br><ul>" +
+                "<li><b>Lancer un nouveau projet</b> : </li>" +
+                "<li><b>Organiser son travail en relation avec celui de son équipe</b> : </li>" +
+                "<li><b>Élaborer, gérer, et transmettre de l'information</b> : </li></ul>",
+            projects: ["<a href='projects.html#travia'>Travia</a>", "<a href='projects.html#harmoneyca'>Harmoneyca</a>", "<a href='projects.html#speedywiki'>SpeedyWiki</a>", "<a href='projects.html#unesco'>UNESCO</a>"]
+        }
+    };
+
+    // Gestion des blocs de compétences
+    let currentDetailSection = null;
+    let currentBlockId = null;
+
+    function showDetailSection(blockId) {
+        if (!currentDetailSection) {
+            currentDetailSection = document.getElementById("academic-skill-container");
+        }
+
+        const blockInfo = academicData[blockId];
+        currentDetailSection.innerHTML = `
+                <p><strong>Description :</strong> ${blockInfo.description}</p>
+                <p><strong>Projets :</strong> ${blockInfo.projects.join(", ")}</p>
+            `;
+        currentDetailSection.dataset.current = blockId;
+
+        currentDetailSection.classList.remove("closing");
+        void currentDetailSection.offsetWidth;
+        currentDetailSection.classList.add("active");
+    }
+
+    function hideDetailSection() {
+        if (!currentDetailSection) return;
+
+        currentDetailSection.classList.remove("active");
+        currentDetailSection.classList.add("closing");
+
+        setTimeout(() => {
+            currentDetailSection.classList.remove("closing");
+            currentDetailSection.innerHTML = '';
+        }, 300);
+    }
+
+    document.querySelectorAll(".block").forEach(block => {
+        block.addEventListener("click", function(e) {
+            e.stopPropagation();
+            const blockId = this.id;
+
+            if (currentBlockId === blockId) {
+                hideDetailSection();
+                currentBlockId = null;
+                return;
+            }
+
+            showDetailSection(blockId);
+            currentBlockId = blockId;
+        });
+    });
+
+    // Gestion des popups pour les compétences techniques
+    const popup = document.getElementById("popup");
+    const desc = document.getElementById("popup-description");
+    const exp = document.getElementById("popup-experience");
+    const proj = document.getElementById("popup-projects");
+
+    document.querySelectorAll("#hard-skills .skill").forEach(skill => {
+        skill.addEventListener("click", function(e) {
+            e.stopPropagation();
+            const skillName = this.dataset.skill;
+            const skillInfo = skillData[skillName];
+
+            if (popup.classList.contains("active") && popup.dataset.current === skillName) {
+                popup.classList.remove("active");
+                return;
+            }
+
+            desc.innerHTML = `<strong>Description :</strong> ${skillInfo.description}`;
+            exp.innerHTML = `<strong>Expérience :</strong> ${skillInfo.experience}`;
+            proj.innerHTML = `<strong>Projets :</strong> ${skillInfo.projects.join(", ")}`;
+            popup.dataset.current = skillName;
+
+            // Positionnement du popup
+            const rect = this.getBoundingClientRect();
+            const popupWidth = popup.offsetWidth;
+            const popupHeight = popup.offsetHeight;
+
+            // Calcul de la position pour centrer le popup par rapport à l'élément cliqué
+            let left = rect.left + (rect.width / 2) - (popupWidth / 2);
+            let top = rect.bottom + 10;
+
+            // Ajustement pour ne pas sortir de l'écran
+            if (left < 10) left = 10;
+            if (left + popupWidth > window.innerWidth - 10) {
+                left = window.innerWidth - popupWidth - 10;
+            }
+
+            if (top + popupHeight > window.innerHeight - 10) {
+                top = rect.top - popupHeight - 10;
+            }
+
+            popup.style.left = `${left}px`;
+            popup.style.top = `${top}px`;
+            popup.classList.add("active");
+        });
+    });
+
+    // Fermer les popups en cliquant ailleurs
+    document.addEventListener("click", function(e) {
+        if (!e.target.closest(".block, .academic-skill-details, #hard-skills .skill, #popup")) {
+            hideDetailSection();
+        }
+
+        if (!e.target.closest("#hard-skills .skill, #popup")) {
+            popup.classList.remove("active");
+        }
+    });
+</script>
+</body>
+</html>

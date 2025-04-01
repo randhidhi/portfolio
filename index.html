@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Randy Bou Jaber - Portfolio</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Montserrat:wght@400;600;800&display=swap">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="container">
+    <h1 id="name">Randy BOU JABER</h1>
+    <p>Étudiant en deuxième année de BUT Informatique</p>
+</div>
+
+<div id="buttons">
+    <button id="projets" data-url="projects.html">📂 Mes Projets</button>
+    <button id="cv" data-url="CV - RANDY BOU JABER.pdf">📄 Voir mon CV</button>
+    <button id="presentation" data-url="skills.html">💻 Mes Compétences</button>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const buttons = document.querySelectorAll("button[data-url]");
+
+        buttons.forEach(button => {
+            button.addEventListener("click", () => {
+                const url = button.getAttribute("data-url");
+                if (url.endsWith('.pdf')) {
+                    window.open(url, '_blank');
+                } else {
+                    window.location.href = url;
+                }
+            });
+
+            // Effet au survol amélioré
+            button.addEventListener('mouseenter', () => {
+                button.style.transform = 'translateY(-3px)';
+            });
+
+            button.addEventListener('mouseleave', () => {
+                button.style.transform = 'translateY(0)';
+            });
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,260 @@
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1e40af;
+    --dark: #1e293b;
+    --light: #f8fafc;
+    --accent: #f59e0b;
+    --block1: #ef4444;
+    --block2: #f97316;
+    --block3: #eab308;
+    --block4: #22c55e;
+    --block5: #3b82f6;
+    --block6: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f1f5f9;
+    color: var(--dark);
+    line-height: 1.6;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+header {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 2rem;
+}
+
+header a {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+header a:hover {
+    transform: translateX(5px);
+    color: var(--primary-dark);
+}
+
+#container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.intro-text {
+    font-size: 1.1rem;
+    color: var(--dark);
+    margin-bottom: 2rem;
+    line-height: 1.7;
+    opacity: 0.9;
+}
+
+/* Blocs de compétences */
+#blocks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.section-helper {
+    width: calc(16.666% - 1rem);
+    min-width: 120px;
+}
+
+.block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    padding: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+#block1 { background-color: var(--block1); }
+#block2 { background-color: var(--block2); }
+#block3 { background-color: var(--block3); color: var(--dark); }
+#block4 { background-color: var(--block4); }
+#block5 { background-color: var(--block5); }
+#block6 { background-color: var(--block6); }
+
+/* Détails des blocs */
+.academic-skill-details {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border-left: 4px solid var(--primary);
+    display: none;
+}
+
+.academic-skill-details.active {
+    display: block;
+    animation: fadeIn 0.4s ease-out;
+}
+
+.academic-skill-details p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.academic-skill-details a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.academic-skill-details a:hover {
+    text-decoration: underline;
+}
+
+/* Compétences techniques */
+.skills-section {
+    margin-bottom: 3rem;
+}
+
+.skills-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.skills-title::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--accent);
+}
+
+/* Conteneur des hard-skills */
+#hard-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Conteneur des soft-skills (non cliquables) */
+#soft-skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 1.5rem;
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80px;
+}
+
+/* Style spécifique pour les hard-skills (cliquables) */
+#hard-skills .skill {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#hard-skills .skill:hover {
+    transform: translateY(-5px);
+}
+
+.skill img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+}
+
+.skill p {
+    font-size: 0.9rem;
+    text-align: center;
+    color: var(--dark);
+    font-weight: 500;
+}
+
+/* Popup des compétences techniques - Positionnement fixe */
+#popup {
+    position: fixed;
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    z-index: 100;
+    max-width: 300px;
+    display: none;
+    border-top: 3px solid var(--accent);
+}
+
+#popup.active {
+    display: block;
+    animation: fadeIn 0.3s ease-out;
+}
+
+#popup p {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+#popup strong {
+    color: var(--primary);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .section-helper {
+        width: calc(50% - 0.5rem);
+    }
+
+    #hard-skills, #soft-skills {
+        justify-content: center;
+    }
+
+    .skill {
+        width: 70px;
+    }
+}

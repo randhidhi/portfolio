@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Randy Bou Jaber - Projets</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Montserrat:wght@400;600;800&display=swap">
+    <link rel="stylesheet" href="projects.css">
+</head>
+<body>
+<header>
+    <a href="index.html">← Randy BOU JABER</a>
+</header>
+
+<div id="container">
+    <p class="intro-text">Pendant mon BUT, on a dû réaliser de nombreux projets en équipe afin d'appliquer les connaissances et compétences apprises au sein de la matière concernée, tant techniques qu'organisationnelles. Je vous présente sur cette page l'ensemble de mes projets de cette année.</p>
+
+    <div id="projects">
+        <div class="project" id="unesco" data-project="unesco">
+            <img src="images/drapeau.png" alt="unesco">
+            <h3>Unesco</h3>
+        </div>
+        <div class="project" id="travia" data-project="travia">
+            <img src="images/traviavaisseau.webp" alt="travia">
+            <h3>Travia</h3>
+        </div>
+        <div class="project" id="harmoneyca" data-project="harmoneyca">
+            <img src="images/willow-tree.jpg" alt="harmoneyca">
+            <h3>Harmoneyca</h3>
+        </div>
+        <div class="project" id="speedywiki" data-project="speedywiki">
+            <img src="images/cutetv.png" alt="speedywiki">
+            <h3>SpeedyWiki</h3>
+        </div>
+    </div>
+</div>
+
+<!-- Overlay et popup -->
+<div class="overlay" id="overlay">
+    <div class="project-details">
+        <button class="close-btn">&times;</button>
+        <h3 id="popup-title"></h3>
+        <p id="popup-description"></p>
+        <p id="popup-technologies"></p>
+        <p id="popup-role"></p>
+    </div>
+</div>
+
+<script>
+    // Données des projets (à compléter avec vos informations réelles)
+    const projectsData = {
+        "unesco": {
+            title: "Projet UNESCO",
+            description: "Site web réalisé pour mettre en valeur le patrimoine culturel mondial de l'UNESCO. Ce projet incluait une base de données des sites classés avec des fonctionnalités de recherche avancée.",
+            technologies: "HTML, CSS, JavaScript, PHP, PostgreSQL",
+            role: "Développeur front-end et gestion de la base de données"
+        },
+        "travia": {
+            title: "Travia",
+            description: "Jeu vidéo éducatif développé en Java pour aider à l'apprentissage des langues étrangères. Le jeu inclut différents niveaux de difficulté et un système de suivi des progrès.",
+            technologies: "Java, JavaFX, MySQL",
+            role: "Développeur principal et designer des niveaux"
+        },
+        "harmoneyca": {
+            title: "Harmoneyca",
+            description: "Application web de gestion de collection musicale permettant aux utilisateurs d'organiser, noter et partager leur musique préférée.",
+            technologies: "HTML, CSS, JavaScript, PHP, MySQL",
+            role: "Responsable back-end et intégration API"
+        },
+        "speedywiki": {
+            title: "SpeedyWiki",
+            description: "Outil de recherche optimisé pour Wikipédia permettant des recherches rapides et une visualisation simplifiée des résultats.",
+            technologies: "Python, Flask, JavaScript, Wikipedia API",
+            role: "Architecte du système et optimisation des performances"
+        }
+    };
+
+    // Éléments du DOM
+    const overlay = document.getElementById("overlay");
+    const popupTitle = document.getElementById("popup-title");
+    const popupDesc = document.getElementById("popup-description");
+    const popupTech = document.getElementById("popup-technologies");
+    const popupRole = document.getElementById("popup-role");
+    const closeBtn = document.querySelector(".close-btn");
+
+    // Gestion des clics sur les projets
+    document.querySelectorAll(".project").forEach(project => {
+        project.addEventListener("click", function(e) {
+            const projectId = this.dataset.project;
+            const projectData = projectsData[projectId];
+
+            // Remplir le popup avec les données
+            popupTitle.textContent = projectData.title;
+            popupDesc.innerHTML = `<strong>Description :</strong> ${projectData.description}`;
+            popupTech.innerHTML = `<strong>Technologies :</strong> ${projectData.technologies}`;
+            popupRole.innerHTML = `<strong>Rôle :</strong> ${projectData.role}`;
+
+            // Afficher l'overlay et le popup
+            overlay.classList.add("active");
+            document.body.style.overflow = "hidden"; // Empêche le scroll
+        });
+    });
+
+    // Fermeture du popup
+    closeBtn.addEventListener("click", closePopup);
+    overlay.addEventListener("click", function(e) {
+        if (e.target === overlay) {
+            closePopup();
+        }
+    });
+
+    function closePopup() {
+        overlay.classList.remove("active");
+        document.body.style.overflow = "auto"; // Réactive le scroll
+    }
+
+    // Fermeture avec la touche ESC
+    document.addEventListener("keydown", function(e) {
+        if (e.key === "Escape" && overlay.classList.contains("active")) {
+            closePopup();
+        }
+    });
+</script>
+</body>
+</html>
