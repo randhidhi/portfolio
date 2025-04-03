@@ -31,10 +31,55 @@ body.lights-on {
     background: #f1f5f9 linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
     color: var(--dark);
 }
+/* Style pour l'indicateur "Cliquez-moi" */
 #click-me {
-    color: white;
-    margin-left: 70rem;
+    position: fixed;
+    top: 25px;
+    right: 90px; /* Position à gauche du switch */
+    color: rgba(255,255,255,0.7);
+    font-size: 0.9rem;
+    font-family: 'JetBrains Mono', monospace;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: all 0.5s ease 1s;
+    white-space: nowrap;
 }
+
+.lights-on #click-me {
+    color: rgba(30, 41, 59, 0.6); /* Couleur plus claire quand allumé */
+}
+
+body:not(.lights-on) #click-me {
+    opacity: 1;
+    transform: translateX(0);
+    animation: pulse 2s infinite;
+}
+
+/* Positionnement responsive */
+@media (max-width: 768px) {
+    #click-me {
+        right: 80px;
+        font-size: 0.8rem;
+        top: 27px;
+    }
+}
+
+@media (max-width: 480px) {
+    #click-me {
+        right: 70px;
+        font-size: 0.7rem;
+        top: 28px;
+    }
+}
+
+/* Animation de clignotement doux */
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+}
+
 /* Interrupteur */
 .light-switch {
     position: fixed;
